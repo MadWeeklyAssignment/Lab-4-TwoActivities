@@ -11,13 +11,19 @@ public class MainActivity<AppCompatActivity> extends AppCompatActivity {
             MainActivity.class.getSimpleName();
 
     @Override
+    
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mMessageEditText = findViewById(R.id.editText_main);
     }
     Intent intent = new Intent(this, SecondActivity.class);
     startActivity(intent);
     public void launchSecondActivity(View view) {
         Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, SecondActivity.class);
+        String message = mMessageEditText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
