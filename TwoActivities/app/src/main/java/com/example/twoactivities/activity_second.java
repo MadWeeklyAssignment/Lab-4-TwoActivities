@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class activity_second extends AppCompatActivity {
 
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
